@@ -9,7 +9,7 @@ ENV KC_DB=postgres
 
 RUN /opt/keycloak/bin/kc.sh build
 
-FROM quay.io/keycloak/keycloak:20.0.5
+FROM quay.io/keycloak/keycloak:20.0.5 AS keycloak
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 WORKDIR /opt/keycloak
 
@@ -26,4 +26,5 @@ ENV KC_HOSTNAME_STRICT_HTTPS=false
 ENV KC_PROXY=edge
 ENV KC_HTTP_RELATIVE_PATH=/auth
 
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "KEYCLOAK_ADMIN=$KC_ADMIN_USER", "KEYCLOAK_ADMIN_PASSWORD=$KC_ADMIN_PASSWORD"]
+#ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
