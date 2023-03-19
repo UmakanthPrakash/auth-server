@@ -3,6 +3,8 @@ FROM quay.io/keycloak/keycloak:20.0.5 as builder
 ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 ENV KC_FEATURES=token-exchange
+ENV KEYCLOAK_ADMIN=$KC_ADMIN_USER
+ENV KEYCLOAK_ADMIN_PASSWORD=$KC_ADMIN_PASSWORD
 ENV KC_DB=postgres
 
 RUN /opt/keycloak/bin/kc.sh build
