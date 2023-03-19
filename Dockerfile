@@ -12,7 +12,7 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 WORKDIR /opt/keycloak
 
 #RUN keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=server" -alias server -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore conf/server.keystore
-
+ENV KC_DB=postgres
 ENV KEYCLOAK_ADMIN=$KC_ADMIN_USER
 ENV KEYCLOAK_ADMIN_PASSWORD=$KC_ADMIN_PASSWORD
 ENV KC_DB_URL=$KC_DB_URL
