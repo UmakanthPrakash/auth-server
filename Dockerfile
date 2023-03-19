@@ -26,5 +26,5 @@ ENV KC_HOSTNAME_STRICT_HTTPS=false
 ENV KC_PROXY=edge
 ENV KC_HTTP_RELATIVE_PATH=/auth
 
-#ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "-e KEYCLOAK_ADMIN=$KC_ADMIN_USER", "-e KEYCLOAK_ADMIN_PASSWORD=$KC_ADMIN_PASSWORD", "start" ]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
+#ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "-e KEYCLOAK_ADMIN=$KC_ADMIN_USER", "-e KEYCLOAK_ADMIN_PASSWORD=$KC_ADMIN_PASSWORD", "start" ]
