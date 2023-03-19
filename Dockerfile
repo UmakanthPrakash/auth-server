@@ -22,4 +22,4 @@ ENV KC_DB_PASSWORD=$KC_DB_PASSWORD
 ENV KC_HOSTNAME_STRICT=false
 ENV KC_HOSTNAME_STRICT_HTTPS=false
 ENV KC_PROXY=edge
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start"]
